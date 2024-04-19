@@ -1,5 +1,5 @@
 <template>
-    <v-container style="margin-top: 10%; margin-right: 8%;">
+    <v-container fluid style="margin-top: 10%; background-color: #E1E4F5;">
         <v-row>
             <div class="section-head">
       <h3 class="subtitle"></h3>
@@ -11,82 +11,75 @@
       </p>
     </div>
         </v-row>
-        <v-row>
+        <v-row style="width: 90%; margin: 0 auto;">
             <!-- Checkout Form -->
-            <v-col cols="12" md="6" style="padding: 5%;background-color: #f6f6f6; border-radius: 15px 0 0 15px;">
-                <v-form id="checkout_form">
-                    <!-- Email Address -->
-                    <v-row class="mb-4">
-                        <v-col cols="12">
-                            <p>Email Address *</p>
-                            <v-text-field style="background-color: white !important;" class="field" v-model="email"
-                                required></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <!-- First Name -->
-                    <v-row class="mb-4">
-                        <v-col cols="12" style="margin-top: -5%;">
-                            <p>First Name *</p>
-                            <v-text-field style="background-color: white !important;" class="field" v-model="firstName"
-                                required></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <!-- Last Name -->
-                    <v-row class="mb-4">
-                        <v-col cols="12" style="margin-top: -5%;">
-                            <p>Last Name *</p>
-                            <v-text-field style="background-color: white !important;" class="field" v-model="lastName"
-                                required></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <!-- Country -->
-                    <v-row class="mb-4">
-                        <v-col cols="12" style="margin-top: -5%;">
-                            <p>Country *</p>
-                            <v-select v-model="selectedCountry" :items="countries" required></v-select>
-                        </v-col>
-                    </v-row>
-                    <!-- Address -->
-                    <v-row class="mb-4">
-                        <v-col cols="12" style="margin-top: -5%;">
-                            <p>Street Address *</p>
-                            <v-text-field style="background-color: white !important;" class="field" v-model="street"
-                                required></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <v-row class="mb-4">
-                        <v-col cols="12" style="margin-top: -5%;">
-                            <p>Town/City *</p>
-                            <v-text-field style="background-color: white !important;" class="field" v-model="city"
-                                required></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <v-row class="mb-4">
-                        <v-col cols="12" style="margin-top: -5%;">
-                            <p>Zip Code *</p>
-                            <v-text-field style="background-color: white !important;" class="field" v-model="postal"
-                                required></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <!-- Phone -->
-                    <v-row class="mb-4">
-                        <v-col cols="12" style="margin-top: -5%;">
-                            <p>Phone Number *</p>
-                            <v-text-field style="background-color: white !important;" class="field" v-model="phone"
-                                required></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <!-- Coupon Code -->
-                    <v-row class="mb-4 purchase">
-                        <v-col cols="12" style="margin-top: -5%;">
-                            <p>Coupon</p>
-                            <v-text-field style="background-color: white !important;" class="field" v-model="coupon"
-                                label="Coupon Code"></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <!-- Terms & Conditions Checkbox -->
-                </v-form>
+            <v-col cols="12" md="6" style="padding: 5%;background-color: #fff; border-radius: 15px 0 0 15px;">
+    <v-form id="checkout_form">
+        <!-- Email Address -->
+        <v-row class="mb-4">
+            <v-col cols="12">
+                <p>Email Address *</p>
+                <v-text-field style="background-color: #fff !important;" class="field" v-model="email" required></v-text-field>
             </v-col>
+        </v-row>
+        <!-- First Name -->
+        <v-row class="mb-4">
+            <v-col cols="12" style="margin-top: -5%;">
+                <p>First Name *</p>
+                <v-text-field style="background-color: #fff !important;" class="field" v-model="firstName" required></v-text-field>
+            </v-col>
+        </v-row>
+        <!-- Last Name -->
+        <v-row class="mb-4">
+            <v-col cols="12" style="margin-top: -5%;">
+                <p>Last Name *</p>
+                <v-text-field style="background-color: #fff !important;" class="field" v-model="lastName" required></v-text-field>
+            </v-col>
+        </v-row>
+        <!-- Country -->
+        <v-row class="mb-4">
+            <v-col cols="12" style="margin-top: -5%;">
+                <p>Country *</p>
+                <v-select v-model="selectedCountry" :items="countries" required></v-select>
+            </v-col>
+        </v-row>
+        <!-- Address -->
+        <v-row class="mb-4">
+            <v-col cols="12" style="margin-top: -5%;">
+                <p>Street Address *</p>
+                <v-text-field style="background-color: #fff !important;" class="field" v-model="street" required></v-text-field>
+            </v-col>
+        </v-row>
+        <v-row class="mb-4">
+            <v-col cols="12" style="margin-top: -5%;">
+                <p>Town/City *</p>
+                <v-text-field style="background-color: #fff !important;" class="field" v-model="city" required></v-text-field>
+            </v-col>
+        </v-row>
+        <v-row class="mb-4">
+            <v-col cols="12" style="margin-top: -5%;">
+                <p>Zip Code *</p>
+                <v-text-field style="background-color: #fff !important;" class="field" v-model="postal" required></v-text-field>
+            </v-col>
+        </v-row>
+        <!-- Phone -->
+        <v-row class="mb-4">
+            <v-col cols="12" style="margin-top: -5%;">
+                <p>Phone Number *</p>
+                <v-text-field style="background-color: #fff !important;" class="field" v-model="phone" required></v-text-field>
+            </v-col>
+        </v-row>
+        <!-- Coupon Code -->
+        <v-row class="mb-4 purchase">
+            <v-col cols="12" style="margin-top: -5%;">
+                <p>Coupon</p>
+                <v-text-field style="background-color: #fff !important;" class="field" v-model="coupon" label="Coupon Code"></v-text-field>
+            </v-col>
+        </v-row>
+        <!-- Terms & Conditions Checkbox -->
+    </v-form>
+</v-col>
+
 
             <!-- Purchase Button -->
             <v-col cols="12" md="6" class="text-center" style=" padding: 5%; border-radius: 0 15px 15px 0;">
@@ -220,7 +213,7 @@
                     <v-col cols="12">
                         <div style="display: inline-flex; align-items: center; width: 70%;">
                             <input type="checkbox" id="agreeCheckbox" v-model="agree" required
-                                style="margin-right: -8px;margin-top: -45px;">
+                                style="margin-right: -8px;margin-top: -25px;">
                             <label for="agreeCheckbox" style="color: white;">By purchasing you hereby agree to our terms
                                 and conditions, privacy policy, and disclaimer.</label>
                         </div>
@@ -426,5 +419,8 @@ export default {
         color: red; /* You can adjust this color */
         font-size: 12px; /* You can adjust this size */
         margin-top: 5px; /* You can adjust the spacing */
+    }
+    .v-input__details {
+        display: none;
     }
 </style>
