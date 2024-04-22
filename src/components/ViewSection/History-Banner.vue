@@ -204,7 +204,7 @@ p{
     width: 100% !important;
   }
   .cont{
-    margin-top: -10% !important;
+    margin-top:40% !important;
   }
 }
 
@@ -217,7 +217,7 @@ p{
   .about_services{
     width: 100% !important;
   }.cont{
-    margin-top: 300%;
+    margin-top: 350%;
   }
 }
 </style>

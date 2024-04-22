@@ -40,7 +40,7 @@ export default {
   -webkit-box-shadow: 0px 5px 49px 0px rgba(51, 42, 147, 0.54) !important;
           box-shadow: 0px 5px 49px 0px rgba(51, 42, 147, 0.54) !important;
   width: 610px !important;
-  height: 500px !important;
+  height: 400px !important;
 }
 .account-box1 h6{
   font-size: 36px !important;

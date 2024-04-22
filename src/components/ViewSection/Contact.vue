@@ -22,7 +22,8 @@
   <v-card class="contact-content"   style="background-color: transparent; width: 100%;box-shadow: none;">
     <v-card-title>
       <h3 class="subtitle">Have questions?</h3>
-      <p>Have questions about payments or price plans? <br>We have answers!</p>
+      <p>Have questions about payments or price plans?</p>
+      <p>We have answers!</p>
     </v-card-title>
     <v-card-text>
       <div class="contact-area">

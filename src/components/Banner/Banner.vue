@@ -218,7 +218,7 @@ export default {
 }
 @media screen and (min-width: 1920px) {
   .banner-container {
-    margin-top: -51% !important ;
+    margin-top: -67% !important ;
     height: 1250px;
   }
 
@@ -315,7 +315,7 @@ export default {
   }
   .banner-content {
     width: 800px;
-    margin-top: 60%;
+    margin-top: 20%;
     margin-left: 5%;
   }
   .banner-content h1,
@@ -358,7 +358,7 @@ export default {
 @media screen and (max-width: 949px) {
   .banner-container {
     margin-top: -80% !important;
-    height: 950px;
+    height: 900px;
   }
   .banner-content {
     width: 800px;
@@ -367,13 +367,13 @@ export default {
   }
   .banner-content h1,
   .banner-content span{
-    font-size: 70px !important;
+    font-size: 60px !important;
   }
   .bg-shap{
     display: none;
   }
   .banner-content p {
-    font-size: 20px !important;
+    font-size: 16px !important;
     margin-top: 0%;
   }
   .label-button {
@@ -1076,9 +1076,9 @@ export default {
   }
 }
 
-@media screen and (max-width: 399px) {
+@media screen and (min-width: 350px) and (max-width: 399px) {
   .banner-container {
-    margin-top: -160% !important;
+    margin-top: -163% !important;
   }
   .banner-content {
     width: 350px;
@@ -1086,10 +1086,10 @@ export default {
     margin-left: 2%;
   }
   .banner-content h1,
-  .banner-content span{
+  .banner-content span {
     font-size: 25px !important;
   }
-  .bg-shap{
+  .bg-shap {
     display: none;
   }
   .banner-content p {

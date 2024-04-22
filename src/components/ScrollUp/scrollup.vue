@@ -47,21 +47,16 @@ export default {
 <style scoped>
 .scroll-up-btn {
   background: linear-gradient(45deg, #903eff 0%, #3e19ff 100%);
-  position: fixed;
-  bottom: 3%;
-  left: 94%;
+  position: fixed; /* Change position to fixed */
+  bottom: 20px; /* Adjusted bottom to 20px */
+  right: 20px; /* Adjusted right to 20px */
   z-index: 500;
-  height: 100%;
-  width: 35px !important;
+  height: 20px; /* Adjusted height to 20px */
+  width: 20px !important; /* Adjusted width to 20px */
   border-radius: 4px;
   color: white !important;
 }
-@media (max-width: 999px) {
-  .scroll-up-btn {
-    left: 90%;
-    height: 40px;
-    width: 40px;
-  }
-}
+
+
 /* Add your media queries here if needed */
 </style>

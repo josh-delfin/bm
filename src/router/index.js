@@ -3,9 +3,11 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
 import Member from '../views/Membership.vue'
-import SignUp from '@/components/Membership/Sign-Up.vue'
-import Forgot from '../components/Membership/Forgot_Pass.vue' 
-
+import SignUp from '../components/Membership/Sign-Up.vue' // Corrected path
+import Forgot from '../components/Membership/Forgot_Pass.vue' // Corrected path
+import Terms from '../views/Terms.vue' 
+import Privacy from '../views/PrivacyPolicyView.vue'
+import Disclaimer from '../views/Disclaimer.vue'
 const routes = [
   {
     path: '/',
@@ -23,20 +25,35 @@ const routes = [
     component: Contact
   },
   {
-    path: '/login', // Assuming this is for login, renaming it to 'login'
-    name: 'Member',
+    path: '/login', // Assuming this is for login, renamed it to 'login'
+    name: 'Login',
     component: Member
   },
   {
-    path: '/sign-up', // corrected the name from 'Signup' to 'SignUp'
+    path: '/sign-up',
     name: 'SignUp',
     component: SignUp
   },
   {
-    path: '/forgot', // corrected the name from 'Signup' to 'SignUp'
+    path: '/forgot',
     name: 'Forgot',
     component: Forgot
-  }
+  },
+  {
+    path: '/terms',
+    name: 'Terms',
+    component: Terms
+  },
+  {
+    path: '/privacy',
+    name: 'Privacy',
+    component: Privacy
+  },
+  {
+    path: '/disclaimer',
+    name: 'Disclaimer',
+    component: Disclaimer
+  },
 ]
 
 const router = createRouter({

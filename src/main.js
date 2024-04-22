@@ -9,7 +9,9 @@ import Contact from './views/Contact.vue';
 import Member from './views/Membership.vue'
 import SignUp from "./components/Membership/Sign-Up.vue";
 import Forgot from "./components/Membership/Forgot_Pass.vue";
-
+import Terms from "./views/Terms.vue";
+import Privacy from "./views/PrivacyPolicyView.vue";
+import Disclaimer from './views/Disclaimer.vue'
 // Vuetify CSS
 import "vuetify/dist/vuetify.min.css";
 
@@ -48,7 +50,10 @@ const router = createRouter({
     { path: "/contact", component: Contact },
     { path: "/login", component: Member },
     { path: "/sign-up", component: SignUp },
-    { path: "/forgot", component: Forgot }
+    { path: "/forgot", component: Forgot },
+    { path: "/terms", component: Terms },
+    { path: "/privacy", component: Privacy },
+    { path: "/disclaimer", component: Disclaimer },
   ],
 });
 

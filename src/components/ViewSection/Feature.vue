@@ -160,10 +160,18 @@ export default {
   margin: 5px;
 }
 
-.texts {
-  margin-left: 20px;
-  /* Adjusted margin for better alignment */
-}
+.img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+    margin-top: 10% !important;
+  }
+
+  .texts {
+    margin-left: 25% !important;
+    margin-top: -110px !important;
+    width: 100%;
+  }
 @media screen and (min-width: 1920px) {
   .img {
     max-width: 100%;
@@ -222,65 +230,6 @@ export default {
   }
 }
 
-@media screen and (max-width: 1699px) and (min-width: 1600px) {
-  .img {
-    max-width: 100%;
-    height: 80px;
-    width: 80px;
-    margin-top: 0% !important;
-  }
-
-  .texts {
-    margin-left: 18% !important;
-    margin-top: -18% !important;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1599px) and (min-width: 1500px) {
-  .img {
-    max-width: 100%;
-    height: 80px;
-    width: 80px;
-    margin-top: 0% !important;
-  }
-
-  .texts {
-    margin-left: 20% !important;
-    margin-top: -20% !important;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1499px) and (min-width: 1400px) {
-  .img {
-    max-width: 100%;
-    height: 80px;
-    width: 80px;
-    margin-top: 0% !important;
-  }
-
-  .texts {
-    margin-left: 22% !important;
-    margin-top: -22% !important;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1399px) and (min-width: 1300px) {
-  .img {
-    max-width: 100%;
-    height: 80px;
-    width: 80px;
-    margin-top: 0% !important;
-  }
-
-  .texts {
-    margin-left: 24% !important;
-    margin-top: -24% !important;
-    width: 100%;
-  }
-}
 
 @media screen and (max-width: 1299px) and (min-width: 1200px) {
   .img {
@@ -329,63 +278,116 @@ export default {
     width: 100%;
   }
 }
-
-@media screen and (max-width: 999px) and (min-width: 900px) {
+@media screen and (max-width: 999px) and (min-width: 950px) {
   .img {
     max-width: 100%;
     height: 80px;
     width: 80px;
-    margin-top: 0% !important;
+    margin-top: 10% !important;
   }
 
   .texts {
     margin-left: 18% !important;
-    margin-top: -18% !important;
+    margin-top: -40% !important;
     width: 100%;
   }
 }
-
-@media screen and (max-width: 899px) and (min-width: 800px) {
+@media screen and (max-width: 949px) and (min-width: 900px) {
   .img {
     max-width: 100%;
     height: 80px;
     width: 80px;
-    margin-top: 0% !important;
+    margin-top: 10% !important;
+  }
+
+  .texts {
+    margin-left: 18% !important;
+    margin-top: -42% !important;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 899px) and (min-width: 850px) {
+  .img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+    margin-top: 5% !important;
   }
 
   .texts {
     margin-left: 20% !important;
-    margin-top: -20% !important;
+    margin-top: -43% !important;
     width: 100%;
   }
 }
-
-@media screen and (max-width: 799px) and (min-width: 700px) {
+@media screen and (max-width: 849px) and (min-width: 800px) {
   .img {
     max-width: 100%;
     height: 80px;
     width: 80px;
-    margin-top: 0% !important;
+    margin-top: 5% !important;
+  }
+
+  .texts {
+    margin-left: 20% !important;
+    margin-top: -45% !important;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 799px) and (min-width: 750px) {
+  .img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+    margin-top: 10% !important;
   }
 
   .texts {
     margin-left: 23% !important;
-    margin-top: -23% !important;
+    margin-top: -50% !important;
     width: 100%;
   }
 }
-
-@media screen and (max-width: 699px) and (min-width: 600px) {
+@media screen and (max-width: 749px) and (min-width: 700px) {
   .img {
     max-width: 100%;
     height: 80px;
     width: 80px;
-    margin-top: -15% !important;
+    margin-top: 10% !important;
+  }
+
+  .texts {
+    margin-left: 23% !important;
+    margin-top: -55% !important;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 699px) and (min-width: 650px) {
+  .img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+    margin-top: 15% !important;
   }
 
   .texts {
     margin-left: 28% !important;
-    margin-top: -37% !important;
+    margin-top: -60% !important;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 649px) and (min-width: 600px) {
+  .img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+    margin-top: 10% !important;
+  }
+
+  .texts {
+    margin-left: 28% !important;
+    margin-top: -70% !important;
     width: 100%;
   }
 }
@@ -395,12 +397,12 @@ export default {
     max-width: 100%;
     height: auto;
     width: auto;
-    margin-top: -10% !important;
+    margin-top: 10% !important;
   }
 
   .texts {
     margin-left: 15% !important;
-    margin-top: -60px !important;
+    margin-top: -110px !important;
     width: 100%;
   }
 
@@ -420,12 +422,12 @@ export default {
     max-width: 100%;
     height: auto;
     width: auto;
-    margin-top: -10% !important;
+    margin-top: 10% !important;
   }
 
   .texts {
     margin-left: 19% !important;
-    margin-top: -60px !important;
+    margin-top: -110px !important;
     width: 100%;
   }
 
@@ -444,12 +446,13 @@ export default {
     max-width: 100%;
     height: auto;
     width: auto;
-    margin-top: -10% !important;
+    margin: 10px;
+    margin-top: 5% !important;
   }
 
   .texts {
-    margin-left: 25% !important;
-    margin-top: -53px !important;
+    margin-left: 30% !important;
+    margin-top: -115px !important;
     width: 90% !important;
   }
 

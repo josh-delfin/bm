@@ -25,8 +25,8 @@
           <div class="footer-box">
             <h4 class="lasthead">Company</h4>
             <ul class="footer-link">
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
             </ul>
           </div>
         </v-col>
@@ -41,8 +41,8 @@
           <div class="footer-box">
             <h4 class="lasthead">Policy</h4>
             <ul class="footer-link">
-              <li><a href="terms.html">Terms of use</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of use</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
             </ul>
           </div>
         </v-col>
@@ -54,10 +54,10 @@
           data-wow-duration="0.6s"
           data-wow-delay="0.6s"
         >
-          <div class="footer-box">
+          <div class="footer-box" style="margin-top: -20%">
             <h4 class="lasthead">Contacts</h4>
             <ul class="footer-link">
-              <li><a>support@bullssignals.com</a></li>
+              <li><p style="text-align: center;">support@bullssignals.com</p></li>
             </ul>
           </div>
         </v-col>
@@ -84,9 +84,9 @@
           <div class="footer-bottom" style="margin-top: -1%">
             <div class="content">
               <p class="text">
-                Copyright &copy; <a href="#">2023</a>. All Rights Reserved By
+                Copyright &copy; <a href="/contact" style="color: #D50A73; font-weight: bold;">2023</a>. All Rights Reserved By
                 <a href="contact.html"
-                  ><span class="websiteName">BullsSignals</span>.</a
+                  ><span class="websiteName" href="/contact" style="color: #D50A73; font-weight: bold;">BullsSignals</span>.</a
                 >
                 BullsSignals is owned and operated by
                 <span class="companyName">Bullss Oceanss LTD</span>, registered
@@ -105,7 +105,7 @@
           <div class="footer-bottom margin-none" style="margin-top: -3%">
             <div class="content">
               <p class="text">
-                <strong>Disclaimer</strong><br />
+                <strong>**Disclaimer**</strong><br />
                 Trading of Futures, Forex, Stocks, and other asset classes
                 contains substantial risk and is not suited for every investor.
                 An investor could potentially lose all or more than the initial
