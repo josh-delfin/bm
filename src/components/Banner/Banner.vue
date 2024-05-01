@@ -216,6 +216,7 @@ export default {
 .banner .hero-area .banner-content .button-box a.link.one {
   margin-right: 30px;
 }
+
 @media screen and (min-width: 1920px) {
   .banner-container {
     margin-top: -67% !important ;

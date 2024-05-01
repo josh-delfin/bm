@@ -3,50 +3,49 @@
     <div class="navbar-container">
       <v-app-bar app height="170" :style="appBarStyle" :color="appBarColor" elevation="0" class="navb">
         <v-toolbar-title style="margin-left: 8%">
-  <a href="/" style="text-decoration: none; color: inherit;">
-    <img src="/public/img/tran_logo.png" alt="Logo" height="150" />
-  </a>
-</v-toolbar-title>
+          <a href="/" style="text-decoration: none; color: inherit;">
+            <img src="/public/img/tran_logo.png" alt="Logo" height="150" />
+          </a>
+        </v-toolbar-title>
 
         <v-spacer></v-spacer>
+
         <div class="navbutton1">
           <v-btn text href="/" class="navbutton">Home</v-btn>
           <v-btn href="#section-p" text class="navbutton">Packages</v-btn>
           <v-btn text href="/about" class="navbutton">About Us</v-btn>
           <v-btn href="/contact" text class="navbutton">Contacts</v-btn>
-          <v-btn href="/login" text class="navbutton2" style="height: 50px; background-color: #66cc33; border-radius: 25px">
+          <v-btn href="/login" text class="navbutton2"
+            style="height: 50px; background-color: #66cc33; border-radius: 25px">
             Members Entry
           </v-btn>
-          <v-btn href="#section-p" text class="navbutton2" style="height: 50px; background-color: #66cc33; border-radius: 25px">
+          <v-btn href="#section-p" text class="navbutton2"
+            style="height: 50px; background-color: #66cc33; border-radius: 25px">
             Buy Package
           </v-btn>
-          <!-- Menu Icon with Image -->
           <v-btn icon @click="toggleMenu" class="menu-icon">
-            <v-icon>mdi-menu</v-icon>
-            <img src="/public/img/menu.png" alt="Menu" style="height: 15px; width: 15px" />
+            <i class="pi pi-bars" style="color: white;"></i>
           </v-btn>
         </div>
+
+        <!-- Dropdown menu section -->
+        <section v-if="menuOpen" class="dropdown-wrapper" :style="{ top: `${menuPositionY}px`, left: `${menuPositionX}px`, transformOrigin: 'top left' }">
+          <button class="dropdown-trigger-button" @click="toggleMenu">
+            <i class="pi pi-times" style="color: white;"></i>
+          </button>
+          <div class="dropdown-content">
+            <!-- Place your dropdown menu items here -->
+            <v-btn class="dropdown-text" href="/" text @click="handleMenuItemClick('Dashboard')">Home</v-btn>
+            <v-btn class="dropdown-text" href="#section-p" text @click="handleMenuItemClick('Profile')">Packages</v-btn>
+            <v-btn class="dropdown-text" href="/about" text @click="handleMenuItemClick('Settings')">About Us</v-btn>
+            <v-btn class="dropdown-text" href="/contact" text @click="handleMenuItemClick('Settings')">Contact Us</v-btn>
+            <v-btn class="dropdown-text" href="/login" text @click="handleMenuItemClick('Settings')" style="border: 1px solid white; border-radius: 25px;height: 50px;">Members Entry</v-btn>
+            <v-btn class="dropdown-text" href="#section-p" text @click="handleMenuItemClick('Settings')" style="border: 1px solid white; border-radius: 25px;height: 50px;">About Us</v-btn>
+          </div>
+        </section>
+        <!-- End dropdown menu section -->
       </v-app-bar>
     </div>
-
-    <!-- Your main content here -->
-
-    <v-menu offset-y="10%" v-model="menuOpen" :position-x="menuPositionX" :position-y="menuPositionY">
-
-      <template v-slot:activator="{ on }">
-        <v-btn icon @click="toggleMenu" class="menu-icon" v-bind="on">
-          <v-icon>mdi-menu</v-icon>
-          <img src="/public/img/menu.png" alt="Menu" style="height: 20px; width: 20px" />
-        </v-btn>
-      </template>
-      <!-- Dropdown menu content -->
-      <v-list class="dropdown-menu">
-        <v-list-item v-for="(item, index) in menuItems" :key="index" @click="handleMenuItemClick(item)"
-          class="dropdown-menu-item">
-          <v-list-item-title>{{ item.text }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
   </v-app>
 </template>
 
@@ -57,21 +56,12 @@ export default {
     return {
       appBarColor: "transparent",
       appBarStyle: {},
-      menuItems: [
-        { text: "Home" },
-        { text: "Packages" },
-        { text: "About" },
-        { text: "Contacts" },
-        { text: "Members Entry" },
-        { text: "Buy Package" },
-      ],
-      menuOpen: false, // Add menuOpen to control the dropdown
+      menuOpen: false,
       menuPositionX: null,
       menuPositionY: null,
     };
   },
   computed: {
-    // Computed property to dynamically calculate the background color based on scroll position
     scrollColor() {
       return window.pageYOffset > 0 ? "#66cc33" : "transparent";
     },
@@ -90,31 +80,30 @@ export default {
         });
       }
     },
-
     handleMenuItemClick(item) {
-      // Handle menu item click event here
-      console.log("Clicked on:", item.text);
+      console.log("Clicked on:", item);
+      this.toggleMenu(); // Close the menu when a menu item is clicked
     },
     toggleMenu() {
-      // Toggle the menuOpen state
-      this.menuOpen = !this.menuOpen;
-      // If menu is open, set the position of the menu
-      if (this.menuOpen) {
-        this.menuPositionX = "left";
-        this.menuPositionY = "top";
-      }
-    },
-    
-
+  this.menuOpen = !this.menuOpen;
+  if (this.menuOpen) {
+    this.menuPositionX = 0; // Adjust as needed
+    this.menuPositionY = 170; // Adjust as needed
+  }
+},
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll); // Listen for scroll event
+    window.addEventListener("scroll", this.handleScroll);
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll); // Remove scroll event listener
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
+
+
+
+
 
 <style scoped>
 .navbar-container {
@@ -173,7 +162,6 @@ export default {
 .v-list-item {
   font-size: 16px;
   font-weight: 500;
-  color: #333333;
   background-color: #66cc33;
   width: 100%;
 }
@@ -182,16 +170,48 @@ export default {
   background-color: #66cc33;
 }
 
-.dropdown-menu {
-  left: 0 !important;
-  top: 65px !important;
-  border-radius: 0 !important;
+.dropdown-wrapper {
+  position: fixed;
+  z-index: 1000;
+  background-color: #66cc33;
   width: 100%;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  margin-top: -3%;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 28px;
+  text-decoration: none;
 }
 
-.dropdown-menu-item {
-  padding: 0 16px !important;
+.dropdown-text{
+  margin-left: 10% !important;
+  margin: 5px;
+  text-transform: none;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.dropdown-trigger-button {
+  display: none;
+}
+
+.menu-open {
+  max-height: 500px; /* Adjust the height as needed */
+}
+@media (max-width: 999px) and (min-width: 320px) {
+  .navbar-container {
+    background-color: #66CC33; /* Set background color within the specified range */
+  }
 }
 
 @media only screen and (max-width: 999px) {
@@ -231,10 +251,10 @@ export default {
     display: block;
   }
 }
+
 @media only screen and (min-width: 320px) and (max-width: 998px) {
-  .navb{
+  .navb {
     height: 160px;
   }
 }
-
 </style>

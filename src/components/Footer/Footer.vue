@@ -114,8 +114,9 @@
                 capital should be used for trading, and only those with
                 sufficient risk capital should consider trading. Past
                 performance is not necessarily indicative of future results.
-                <br />
-                Hypothetical performance results have many inherent limitations,
+                </p>
+                <br>
+                <p class="text">Hypothetical performance results have many inherent limitations,
                 some of which are described below. No representation is being
                 made that any account will or is likely to achieve profits or
                 losses similar to those shown; in fact, there are frequently
@@ -133,11 +134,11 @@
                 to the markets in general or to the implementation of any
                 specific trading program that cannot be fully accounted for in
                 the preparation of hypothetical performance results and all of
-                which can adversely affect trading results. <br />
-                Testimonials appearing on this website may not be representative
+                which can adversely affect trading results.</p>
+                <br>
+                 <p class="text">Testimonials appearing on this website may not be representative
                 of other clients or customers and are not a guarantee of future
-                performance or success.
-              </p>
+                performance or success.</p>
             </div>
           </div>
         </v-col>
