@@ -12,6 +12,7 @@ import Forgot from "./components/Membership/Forgot_Pass.vue";
 import Terms from "./views/Terms.vue";
 import Privacy from "./views/PrivacyPolicyView.vue";
 import Disclaimer from './views/Disclaimer.vue'
+import Dashboard from './views/Dashboard.vue';
 // Vuetify CSS
 import "vuetify/dist/vuetify.min.css";
 
@@ -54,6 +55,7 @@ const router = createRouter({
     { path: "/terms", component: Terms },
     { path: "/privacy", component: Privacy },
     { path: "/disclaimer", component: Disclaimer },
+    { path: "/dashboard", component: Dashboard },
   ],
 });
 

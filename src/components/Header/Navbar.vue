@@ -35,7 +35,7 @@
           </button>
           <div class="dropdown-content">
             <!-- Place your dropdown menu items here -->
-            <v-btn class="dropdown-text" href="/" text @click="handleMenuItemClick('Dashboard')">Home</v-btn>
+            <v-btn class="dropdown-text" href="/" text @click="handleMenuItemClick('')">Home</v-btn>
             <v-btn class="dropdown-text" href="#section-p" text @click="handleMenuItemClick('Profile')">Packages</v-btn>
             <v-btn class="dropdown-text" href="/about" text @click="handleMenuItemClick('Settings')">About Us</v-btn>
             <v-btn class="dropdown-text" href="/contact" text @click="handleMenuItemClick('Settings')">Contact Us</v-btn>
