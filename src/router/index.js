@@ -8,8 +8,9 @@ import Forgot from '../components/Membership/Forgot_Pass.vue' // Corrected path
 import Terms from '../views/Terms.vue' 
 import Privacy from '../views/PrivacyPolicyView.vue'
 import Disclaimer from '../views/Disclaimer.vue'
-import Dashboard from '../views/Dashboard.vue'
-
+import DashboardHome from '../views/Dashboard.vue'
+import DashboardAccount from '../components/ViewSection/DashboardAccount.vue'
+import DashboardSupport from '../components/ViewSection/DashboardSupport.vue'
 const routes = [
   {
     path: '/',
@@ -57,9 +58,19 @@ const routes = [
     component: Disclaimer
   },
   {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: Dashboard
+    path: '/dashboard/Home',
+    name: 'DashboardHome',
+    component: DashboardHome
+  },
+  {
+    path: '/dashboard/account',
+    name: 'DashboardAccount',
+    component: DashboardAccount
+  },
+  {
+    path: '/dashboard/support',
+    name: 'DashboardSupport',
+    component: DashboardSupport
   },
 ]
 

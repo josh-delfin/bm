@@ -4,15 +4,17 @@
             <v-col cols="12" margin-left="10%">
     <div style="display: flex; align-items: center;">
         <v-img src="/img/tran_logo.png" max-height="140" style="margin-left: -35%; margin-top: 2%;"></v-img>
-        <a style="color: #fff; margin-left: -30%;" href="#">Terms & Conditions</a>
+        <a href="/terms" style="color: #fff; margin-left: -30%; display: flex; align-items: center;">Terms & Conditions</a>
         <div style="border-left: 1px solid #fff; height: 20px; margin: 0 10px;"></div> <!-- Vertical divider -->
-        <a style="color: #fff;" href="#">Contact Us</a>
+        <a href="/contact" style="color: #fff; display: flex; align-items: center;">Contact Us</a>
         <div style="border-left: 1px solid #fff; height: 20px; margin: 0 10px;"></div> <!-- Vertical divider -->
-        <a style="color: #fff;" href="#">About Us</a>
+        <a href="/about" style="color: #fff; display: flex; align-items: center;">About Us</a>
         <div style="border-left: 1px solid #fff; height: 20px; margin: 0 10px;"></div> <!-- Vertical divider -->
-        <a style="color: #fff;" href="#">My Dashboard</a>
+        <a href="/dashboard/home" style="color: #fff; display: flex; align-items: center;">My Dashboard</a>
     </div>
 </v-col>
+
+
 
 
 

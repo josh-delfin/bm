@@ -3,7 +3,7 @@
     <div class="navbar-container">
       <v-app-bar
         app
-        height="100"
+        height="215"
         :style="appBarStyle"
         :color="appBarColor"
         elevation="0"
@@ -30,35 +30,6 @@
     </div>
 
     <!-- Your main content here -->
-
-    <v-menu
-      offset-y="10%"
-      v-model="menuOpen"
-      :position-x="menuPositionX"
-      :position-y="menuPositionY"
-    >
-      <template v-slot:activator="{ on }">
-        <v-btn icon v-on="on" class="menu-icon">
-          <v-icon>mdi-menu</v-icon>
-          <img
-            src="/public/img/menu.png"
-            alt="Menu"
-            style="height: 20px; width: 20px"
-          />
-        </v-btn>
-      </template>
-      <!-- Dropdown menu content -->
-      <v-list class="dropdown-menu">
-        <v-list-item
-          v-for="(item, index) in menuItems"
-          :key="index"
-          @click="handleMenuItemClick(item)"
-          class="dropdown-menu-item"
-        >
-          <v-list-item-title>{{ item.text }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
   </v-app>
 </template>
 
@@ -69,17 +40,6 @@ export default {
     return {
       appBarColor: "transparent",
       appBarStyle: {},
-      menuItems: [
-        { text: "Home" },
-        { text: "Packages" },
-        { text: "About" },
-        { text: "Contacts" },
-        { text: "Members Entry" },
-        { text: "Buy Package" },
-      ],
-      menuOpen: false, // Add menuOpen to control the dropdown
-      menuPositionX: null,
-      menuPositionY: null,
     };
   },
   computed: {
@@ -102,20 +62,6 @@ export default {
         });
       }
     },
-
-    handleMenuItemClick(item) {
-      // Handle menu item click event here
-      console.log("Clicked on:", item.text);
-    },
-    toggleMenu() {
-      // Toggle the menuOpen state
-      this.menuOpen = !this.menuOpen;
-      // If menu is open, set the position of the menu
-      if (this.menuOpen) {
-        this.menuPositionX = "left";
-        this.menuPositionY = "top";
-      }
-    },
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll); // Listen for scroll event
@@ -125,6 +71,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .user {
   position: absolute;
@@ -183,29 +130,5 @@ export default {
 
 .menu-icon {
   display: none !important;
-}
-
-.v-list-item {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333333;
-  background-color: #66cc33;
-  width: 100%;
-}
-
-.v-list-item:hover {
-  background-color: #66cc33;
-}
-
-.dropdown-menu {
-  left: 0 !important;
-  top: 65px !important;
-  border-radius: 0 !important;
-  width: 100%;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5) !important;
-}
-
-.dropdown-menu-item {
-  padding: 0 16px !important;
 }
 </style>

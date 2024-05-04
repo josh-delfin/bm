@@ -1,7 +1,7 @@
 <template>
     <div>
       <DashboardNavbar />
-      <Dashboard />
+      <Support />
       <DashboardFooter />
     </div>
   </template>
@@ -9,7 +9,7 @@
   <script setup lang="ts">
   import { defineComponent } from "vue";
   import DashboardNavbar from "@/components/Header/Dashboard-Navbar.vue";
-  import Dashboard from "../components/Dashboard/Dashboard-Home.vue";
+  import Support from "@/components/Dashboard/Support.vue"
   import DashboardFooter from "@/components/Footer/Dashboard-Footer.vue"
   
   // Set the title for the page
@@ -21,7 +21,7 @@
     name: "YourComponent",
     components: {
       DashboardNavbar,
-      Dashboard,
+      Support,
       DashboardFooter,
     },
   });

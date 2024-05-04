@@ -13,6 +13,8 @@ import Terms from "./views/Terms.vue";
 import Privacy from "./views/PrivacyPolicyView.vue";
 import Disclaimer from './views/Disclaimer.vue'
 import Dashboard from './views/Dashboard.vue';
+import DashboardAccount from './components/ViewSection/DashboardAccount.vue' 
+import DashboardSupport from './components/ViewSection/DashboardSupport.vue'
 // Vuetify CSS
 import "vuetify/dist/vuetify.min.css";
 
@@ -55,7 +57,9 @@ const router = createRouter({
     { path: "/terms", component: Terms },
     { path: "/privacy", component: Privacy },
     { path: "/disclaimer", component: Disclaimer },
-    { path: "/dashboard", component: Dashboard },
+    { path: "/dashboard/home", component: Dashboard },
+    { path: "/dashboard/account", component: DashboardAccount },
+    { path: "/dashboard/support", component: DashboardSupport },
   ],
 });
 
