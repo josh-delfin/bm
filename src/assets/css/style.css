@@ -60,9 +60,8 @@ body {
   font-size: 16px;
   line-height: 1.45;
   font-weight: 400;
-  width:100%;
 }
- 
+
 h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: 80px;
@@ -443,7 +442,7 @@ p.text {
             transform: rotate(360deg);
   }
 }
-.logo {width: 200px;height:130px}
+.logo {width: 250px;}
 /* Main-menu Start */
 .mein-menu {
   width: 100%;

@@ -9,8 +9,8 @@ import Terms from '../views/Terms.vue'
 import Privacy from '../views/PrivacyPolicyView.vue'
 import Disclaimer from '../views/Disclaimer.vue'
 import DashboardHome from '../views/Dashboard.vue'
-import DashboardAccount from '../components/ViewSection/DashboardAccount.vue'
-import DashboardSupport from '../components/ViewSection/DashboardSupport.vue'
+import DashboardAccount from '../components/Dashboard/DashboardAccount.vue'
+import DashboardSupport from '../components/Dashboard/DashboardSupport.vue'
 const routes = [
   {
     path: '/',
