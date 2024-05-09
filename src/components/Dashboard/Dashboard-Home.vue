@@ -54,7 +54,7 @@
 
         <!-- Dashboard Content -->
         <v-col>
-          <div class="dashboard-content" style="margin-left: 3%">
+          <div class="dashboard-content" style="margin-left: 3%;margin-top: 15% !important;">
             <div class="dashboard-head">
               <h1>Package</h1>
               <h5 id="ver_status">No packages yet</h5>
@@ -184,16 +184,38 @@ export default {
 
 <style scoped>
 .dashboard-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: -50%;
   margin-bottom: 5%;
   margin-left: 2%;
   background-image: url("/public/images/about-top-right.png");
 }
+
 .dashboard-sidebar {
-  margin-top: 85%;
+  width: 100%;
+  margin-top: 100% !important; 
+  margin-left:-55% ;
 }
+
 .dashboard-content {
-  margin-top: 15%;
+  width: 80%; /* Adjust content width as needed */
+  margin-top: 25% !important;
+}
+
+.dashboard-head {
+  margin-bottom: 20px;
+}
+
+.dashboard-home-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dashboard-home-left {
+  width: 100%; /* Adjust as needed */
 }
 .icon {
   margin: 5%;
@@ -255,5 +277,344 @@ text-decoration: none;
 transform: none;
 font-family: PoppinsLight;
 letter-spacing: 0.36px;
+}
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+  .dashboard-sidebar {
+    display: none;
+  }
+}
+
+/* Small Phones: 320px - 480px */
+@media only screen and (min-width: 320px) and (max-width: 350px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .dashboard-content {
+    margin-top: -90%;
+  }
+}
+@media only screen and (min-width: 350px) and (max-width: 400px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .dashboard-content {
+    margin-top: -80%;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 450px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .dashboard-content {
+    margin-top: -60%;
+  }
+}
+@media only screen and (min-width: 450px) and (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .dashboard-content {
+    margin-top: -50%;
+  }
+}
+
+/* Standard Phones: 480px - 768px */
+@media only screen and (min-width: 450px) and (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .dashboard-content {
+    margin-top: -50%;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 550px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .dashboard-content {
+    margin-top: -35%;
+  }
+}
+@media only screen and (min-width: 550px) and (max-width: 600px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .dashboard-content {
+    margin-top: -25%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 650px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .dashboard-content {
+    margin-top: -20%;
+  }
+}
+@media only screen and (min-width: 650px) and (max-width: 700px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+  
+  .dashboard-content {
+    margin-top: -10%;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 800px) {
+  h1 {
+    font-size: 55px;
+  }
+
+  h5 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .dashboard-content {
+    margin-top: -10%;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 900px) {
+  h1 {
+    font-size: 55px;
+  }
+
+  h5 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+  
+  .dashboard-content {
+    margin-top: 5%;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1024px) {
+  h1 {
+    font-size: 55px;
+  }
+
+  h5 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+  
+  .dashboard-content {
+    margin-top: 5%;
+  }
+}
+/* Small Tablets: 1024px - 1280px */
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h5 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+  .dashboard-sidebar{
+    margin-top: -10%;
+  }
+  .dashboard-content {
+    margin-top: 0%;
+  }
+}
+
+/* Standard Tablets: 1280px - 1366px */
+@media only screen and (min-width: 1280px) and (max-width: 1366px) {
+  h1 {
+    font-size: 65px;
+  }
+
+  h5 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+  .dashboard-sidebar{
+    margin-top: -5%;
+  }
+  .dashboard-content {
+    margin-top: 0%;
+  }
+}
+
+/* Large Tablets: 1366px - 1440px */
+@media only screen and (min-width: 1366px) and (max-width: 1440px) {
+  h1 {
+    font-size: 65px;
+  }
+
+  h5 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+  .dashboard-sidebar{
+    margin-top: -5%;
+  }
+  .dashboard-content {
+    margin-top: 0% !important;
+  }
+}
+
+/* Small Laptops: 1440px - 1600px */
+@media only screen and (min-width: 1440px) and (max-width: 1600px) {
+  h1 {
+    font-size: 75px;
+  }
+
+  h5 {
+    font-size: 38px;
+  }
+
+  p {
+    font-size: 28px;
+  }
+  .dashboard-sidebar{
+    margin-top: -10%;
+  }
+  .dashboard-content {
+    margin-top: 0% !important;
+  }
+}
+
+/* Standard Laptops: 1600px - 1920px */
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  h5 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+  .dashboard-sidebar{
+    margin-top: -10%;
+  }
+  .dashboard-content {
+    margin-top: 0% !important;
+  }
+}
+
+/* Large Laptops: 1920px and above */
+@media only screen and (min-width: 1920px) {
+  h1 {
+    font-size: 85px;
+  }
+
+  h5 {
+    font-size: 42px;
+  }
+
+  p {
+    font-size: 32px;
+  }
+
+  .dashboard-sidebar{
+    margin-top: -35%;
+  }
+  .dashboard-content {
+    margin-top:-5% !important;
+  }
 }
 </style>

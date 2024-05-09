@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div class="navbar-container">
+    <div class="navbar-container" :style="{ backgroundColor: navBackgroundColor }">
       <v-app-bar app height="170" :style="appBarStyle" :color="appBarColor" elevation="0" class="navb">
         <v-toolbar-title style="margin-left: 8%">
           <a href="/" style="text-decoration: none; color: inherit;">
@@ -11,36 +11,35 @@
         <v-spacer></v-spacer>
 
         <div class="navbutton1">
-          <v-btn text href="/" class="navbutton">Home</v-btn>
-          <v-btn href="#section-p" text class="navbutton">Packages</v-btn>
-          <v-btn text href="/about" class="navbutton">About Us</v-btn>
-          <v-btn href="/contact" text class="navbutton">Contacts</v-btn>
-          <v-btn href="/login" text class="navbutton2"
-            style="height: 50px; background-color: #66cc33; border-radius: 25px">
-            Members Entry
-          </v-btn>
-          <v-btn href="#section-p" text class="navbutton2"
-            style="height: 50px; background-color: #66cc33; border-radius: 25px">
-            Buy Package
-          </v-btn>
-          <v-btn icon @click="toggleMenu" class="menu-icon">
-            <i class="pi pi-bars" style="color: white;"></i>
+          <v-row align="center">
+            <div class="welcome">
+              <v-col cols="auto" style="margin-left: -60%;">
+                <v-icon style="border: 2px solid ;border-radius: 50% ;height: 35px; width: 35px; ">pi pi-user</v-icon>
+              </v-col>
+              <v-col cols="auto">
+                <span>Welcome, <br><span id="client_name">Guest</span></span>
+              </v-col>
+            </div>
+          </v-row>
+          <v-btn v-if="isMobileMenuVisible" icon @click="toggleMenu" class="menu-icon">
+            <i class="pi pi-bars" :style="{ color: menuIconColor }"></i>
           </v-btn>
         </div>
 
         <!-- Dropdown menu section -->
-        <section v-if="menuOpen" class="dropdown-wrapper" :style="{ top: `${menuPositionY}px`, left: `${menuPositionX}px`, transformOrigin: 'top left' }">
+        <section v-if="menuOpen" class="dropdown-wrapper"
+          :style="{ top: `${menuPositionY}px`, left: `${menuPositionX}px`, transformOrigin: 'top left' }">
           <button class="dropdown-trigger-button" @click="toggleMenu">
             <i class="pi pi-times" style="color: white;"></i>
           </button>
           <div class="dropdown-content">
             <!-- Place your dropdown menu items here -->
-            <v-btn class="dropdown-text" href="/" text @click="handleMenuItemClick('')">Home</v-btn>
-            <v-btn class="dropdown-text" href="#section-p" text @click="handleMenuItemClick('Profile')">Packages</v-btn>
-            <v-btn class="dropdown-text" href="/about" text @click="handleMenuItemClick('Settings')">About Us</v-btn>
-            <v-btn class="dropdown-text" href="/contact" text @click="handleMenuItemClick('Settings')">Contact Us</v-btn>
-            <v-btn class="dropdown-text" href="/login" text @click="handleMenuItemClick('Settings')" style="border: 1px solid white; border-radius: 25px;height: 50px;">Members Entry</v-btn>
-            <v-btn class="dropdown-text" href="#section-p" text @click="handleMenuItemClick('Settings')" style="border: 1px solid white; border-radius: 25px;height: 50px;">About Us</v-btn>
+            <v-btn class="dropdown-text" href="/dashboard/home" text @click="handleMenuItemClick('')"> <v-icon
+                style="border: 2px solid ;border-radius: 50% ;height: 35px; width: 35px;">pi pi-user</v-icon>Welcome
+              Guest</v-btn>
+            <v-btn class="dropdown-text" href="/dashboard/home" text @click="handleMenuItemClick('')">Home</v-btn>
+            <v-btn class="dropdown-text" href="/dashboard/account" text @click="handleMenuItemClick('')">Account</v-btn>
+            <v-btn class="dropdown-text" href="/dashboard/support" text @click="handleMenuItemClick('')">Support</v-btn>
           </div>
         </section>
         <!-- End dropdown menu section -->
@@ -59,16 +58,21 @@ export default {
       menuOpen: false,
       menuPositionX: null,
       menuPositionY: null,
+      menuIconColor: "#fff",
+      isMobileMenuVisible: false, // Add a new data property to control mobile menu visibility
     };
   },
   computed: {
     scrollColor() {
-      return window.pageYOffset > 0 ? "#66cc33" : "transparent";
+      return window.pageYOffset > 0 ? "#391E60" : "transparent";
+    },
+    navBackgroundColor() {
+      return window.innerWidth <= 320 ? "#391E60" : "transparent";
     },
   },
   methods: {
     handleScroll() {
-      this.appBarColor = window.pageYOffset === 0 ? "transparent" : "#66cc33";
+      this.appBarColor = window.pageYOffset === 0 ? "transparent" : "#391E60";
       const navButtons = document.querySelectorAll(".navbutton2");
       if (navButtons) {
         navButtons.forEach((navButton) => {
@@ -79,30 +83,37 @@ export default {
           }
         });
       }
+
+      // Update menu icon color based on nav transparency
+      this.menuIconColor = this.appBarColor === "transparent" ? "#391e60" : "#fff";
+
+      // Toggle visibility of the mobile menu icon based on screen width
+      this.isMobileMenuVisible = window.innerWidth <= 1024;
     },
     handleMenuItemClick(item) {
       console.log("Clicked on:", item);
       this.toggleMenu(); // Close the menu when a menu item is clicked
     },
     toggleMenu() {
-  this.menuOpen = !this.menuOpen;
-  if (this.menuOpen) {
-    this.menuPositionX = 0; // Adjust as needed
-    this.menuPositionY = 170; // Adjust as needed
-  }
-},
+      this.menuOpen = !this.menuOpen;
+      if (this.menuOpen) {
+        this.menuPositionX = 0; // Adjust as needed
+        this.menuPositionY = 170; // Adjust as needed
+      }
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.handleScroll); // Listen to window resize events
+    this.handleScroll(); // Call handleScroll initially to set initial state
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.handleScroll); // Remove resize event listener
   },
 };
+
 </script>
-
-
-
 
 
 <style scoped>
@@ -157,23 +168,24 @@ export default {
 
 .menu-icon {
   display: none !important;
+
 }
 
 .v-list-item {
   font-size: 16px;
   font-weight: 500;
-  background-color: #66cc33;
+  background-color: #391E60;
   width: 100%;
 }
 
 .v-list-item:hover {
-  background-color: #66cc33;
+  background-color: #391E60;
 }
 
 .dropdown-wrapper {
   position: fixed;
   z-index: 1000;
-  background-color: #66cc33;
+  background-color: #391E60;
   width: 100%;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
@@ -188,7 +200,7 @@ export default {
   text-decoration: none;
 }
 
-.dropdown-text{
+.dropdown-text {
   margin-left: 10% !important;
   margin: 5px;
   text-transform: none;
@@ -206,19 +218,41 @@ export default {
 }
 
 .menu-open {
-  max-height: 500px; /* Adjust the height as needed */
+  max-height: 500px;
+  /* Adjust the height as needed */
 }
+.navbutton1 {
+  margin-right: 0%; /* Adjusted margin-right */
+  display: flex; /* Add flex display */
+  align-items: center; /* Align items vertically */
+}
+
+.welcome {
+  margin-right: 10px; /* Adjust margin between icon and text */
+  display: flex; /* Add flex display */
+  align-items: center; /* Align items vertically */
+}
+
+.welcome span {
+  margin-left: 5px; /* Adjust margin between icon and text */
+}
+
 @media (max-width: 999px) and (min-width: 320px) {
   .navbar-container {
-    background-color: #66CC33; /* Set background color within the specified range */
+    background-color: #391E60;
+    /* Set background color within the specified range */
+  }
+
+  .welcome {
+    display: none;
   }
 }
 
 @media only screen and (max-width: 999px) {
   .menu-icon {
     display: block !important;
-    margin-left: 90%;
-    /* Adjusted margin-left */
+    margin-left: 50% !important; /* Adjusted margin-left */
+    margin-right: 50px !important; /* Added margin-right */
   }
 
   .navbutton2 {
@@ -246,9 +280,12 @@ export default {
   }
 }
 
+
 @media only screen and (min-width: 998px) {
   .menu-icon {
-    display: block;
+    display: block !important;
+    margin-right: 10% !important;
+    /* Adjusted margin-right */
   }
 }
 
@@ -257,24 +294,28 @@ export default {
     height: 160px;
   }
 }
+
 @media only screen and (max-width: 480px) {
-    .navlogo {
-      height: 100px; /* Adjust as needed */
-      width: auto;
-    }
+  .navlogo {
+    height: 100px;
+    /* Adjust as needed */
+    width: auto;
   }
+}
 
-  @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .navlogo {
-      height: 120px; /* Adjust as needed */
-      width: auto;
-    }
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .navlogo {
+    height: 120px;
+    /* Adjust as needed */
+    width: auto;
   }
+}
 
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .navlogo {
-      height: 140px; /* Adjust as needed */
-      width: auto;
-    }
-    }
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .navlogo {
+    height: 140px;
+    /* Adjust as needed */
+    width: auto;
+  }
+}
 </style>
